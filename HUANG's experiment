@@ -1,0 +1,27 @@
+const int CLOCK_PIN = 12;  
+
+
+int onTime = 30;     
+int offTime = 1000;   
+int pulseCount = 15;  
+
+void setup() {
+  pinMode(CLOCK_PIN, OUTPUT);     
+  digitalWrite(CLOCK_PIN, LOW);   
+  Serial.begin(9600);
+  Serial.println("クロック出力開始");
+ 
+  
+  for (int i = 0; i < pulseCount; i++) {
+    digitalWrite(CLOCK_PIN, HIGH);  
+    delay(onTime);                  
+    digitalWrite(CLOCK_PIN, LOW);   
+    delay(offTime);                 
+  }
+
+  Serial.println("出力完了：プログラム停止");
+}
+
+void loop() {
+
+}
